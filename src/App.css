@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.icon{
+  background-color: red;
+  border-radius: 115px;
+  width:100px;
+  height:100px;
+  line-height:100px;
+  font-size:40px;
+  color:black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  text-align:center
+}
+.mavi{
+  color:darkblue;
+  font-weight:bold;
+}

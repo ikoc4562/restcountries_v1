@@ -5,16 +5,17 @@ import CountryDetail from "./components/CountryDetail";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 function App() {
   return (
       <Container>
           <Row >
               <Col>
-      <Routes>
-          <Route path='/' element={<Countries/>}/>
-          <Route path='/country/:code' element={<CountryDetail/>}/>
-      </Routes>
+                  <Routes>
+                      <Route path='/' element={<Countries/>}/>
+                      <Route path='/country/:code' element={<CountryDetail/>}/>
+                  </Routes>
               </Col>
           </Row>
       </Container>

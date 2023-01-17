@@ -1,9 +1,8 @@
 import React, {useEffect,useState} from 'react';
 import {useParams} from "react-router-dom";
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Nav from "react-bootstrap/Nav";
+import {Link} from "react-router-dom";
 
 function CountryDetail() {
     const {code}= useParams();
@@ -19,22 +18,34 @@ function CountryDetail() {
     )
     return (
 
-<div>
+                <div className="m-5">
                     {country.map((item,i)=>(
-                        <Card key={i} style={{ width: '18rem' }}>
-                            <Card.Title>{item.name.common}</Card.Title>
+
+                        <Card key={i} style={{ width: '50rem' }}>
+
+                            <Nav className="navbar">
+                                <div className="container-fluid">
+                                    <div className="row">
+                                        <div className="icon col-4">{item.name.common.slice(0,1)}</div>
+                                        <div className="col-8"> {item.name.common}/{item.capital}</div>
+                                    </div>
+                                    <Link to="/"><a type="button" className="btn btn-primary">Back</a></Link>
+
+                                </div>
+                            </Nav>
+
                             <Card.Img variant="top" src={item.flags.png} />
                             <Card.Body>
 
                                 <Card.Text>
-                                    The country belongs to {item.region} region and {item.subregion} sub-region.
-                                    Located at the {item.latlng[0]}° N and {item.latlng[1]}° W, this country has population of {item.population} and it has gained the indepented, according to CIA World Factbook.
+                                    The country belongs to <span className="mavi">{item.region}</span> region and <span className="mavi">{item.subregion}</span> sub-region.
+                                    Located at the <span className="mavi">{item.latlng[0]}</span>° N and <span className="mavi">{item.latlng[1]}</span>° W, this country has population of <span className="mavi">{item.population}</span> and it has gained the indepented, according to CIA World Factbook.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
 
                     ))}
-</div>
+                </div>
     );
 
 }
